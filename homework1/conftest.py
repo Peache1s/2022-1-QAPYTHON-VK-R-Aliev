@@ -10,10 +10,3 @@ def driver():
     browser.get('https://target.my.com')
     yield browser
     browser.quit()
-
-
-
-
-
-
-
