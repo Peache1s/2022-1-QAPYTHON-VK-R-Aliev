@@ -1,6 +1,6 @@
 pytest==7.0.1
 selenium==4.1.2
-xdist==2.5.0
+pytest-xdist==2.4.0
 allure-pytest==2.9.45
 allure-pytest-commons==2.9.45
 requests==2.27.1
