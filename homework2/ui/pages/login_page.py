@@ -23,10 +23,13 @@ class LoginPage(BasePage):
     password = 'symbols_for_'
     locators = LoginPageLocators
 
-    def login(self):
+    def login(self, login=None, password=None):
+        if login == None and password == None:
+            login = self.user
+            password = self.password
         self.click(LoginPageLocators.LOG_IN_LOCATOR, 5)
-        self.input(LoginPageLocators.NAME_LOCATOR, self.user, 5)
-        elem = self.input(LoginPageLocators.PASSW_LOCATOR, self.password, 5)
+        self.input(LoginPageLocators.NAME_LOCATOR, login, 5)
+        elem = self.input(LoginPageLocators.PASSW_LOCATOR, password, 5)
         elem.send_keys(Keys.ENTER)
         return CampaignPage(self.driver)
 
