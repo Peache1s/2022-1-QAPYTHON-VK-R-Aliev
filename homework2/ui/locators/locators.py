@@ -37,4 +37,7 @@ class CampaignPageLocators:
     ADD_PICTURE_LOCATOR_SMALL = (By.XPATH, '//div[contains(@class, "roles-module-buttonWrap")]/div[2]/input')
     ELEM_SUBMIT_SMALL = (By.XPATH, '//input[contains(@class, "image-cropper__save")]')
     FINAL_CREATE_CAMPAIGN = (By.XPATH, '//div[@class = "footer__button js-save-button-wrap"]/button')
-    NAME_OF_CREATED_CAMPAIGN = (By.XPATH, '//a[contains(@class, "nameCell-module-campaignNameLink")]')
+    PROTOTYPE_NAME_OF_CREATED_CAMPAIGN = '//a[contains(@class, "nameCell-module-campaignNameLink") and @title='
+    DELETE_SETTINGS = '/div/div[contains(@class, "settingsCell-module-settingsIcon")]'
+    REMOVE_LOCATOR = (By.XPATH, '//li[contains(@class, "optionsList-module") and @title = "Remove"]')
+    CHECK_DELETE_PROTOTYPE = '/div/div/span[contains(@class, "translation-module-statusText")]'

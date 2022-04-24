@@ -100,5 +100,7 @@ class TestOne(BaseCase):
     def test_create_campaign(self, login):
         self.logger.info("Start")
         answer = self.campaign_page.create_campaign()
-        self.logger.info("End")
         assert answer[0] == answer[1]
+        answer_del = self.campaign_page.delete_campaign(answer[2])
+        self.logger.info("End")
+        assert answer_del == 'Deleted campaign'
