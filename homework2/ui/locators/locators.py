@@ -39,5 +39,5 @@ class CampaignPageLocators:
     FINAL_CREATE_CAMPAIGN = (By.XPATH, '//div[@class = "footer__button js-save-button-wrap"]/button')
     PROTOTYPE_NAME_OF_CREATED_CAMPAIGN = '//a[contains(@class, "nameCell-module-campaignNameLink") and @title='
     DELETE_SETTINGS = '/div/div[contains(@class, "settingsCell-module-settingsIcon")]'
-    REMOVE_LOCATOR = (By.XPATH, '//li[contains(@class, "optionsList-module") and @title = "Remove"]')
+    REMOVE_LOCATOR = (By.XPATH, '//ul[contains(@class, "optionsList-module-optionsList")]/li[5]')
     CHECK_DELETE_PROTOTYPE = '/div/div/span[contains(@class, "translation-module-statusText")]'
