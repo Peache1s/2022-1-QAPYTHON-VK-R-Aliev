@@ -40,3 +40,4 @@ with open(args.ResultFile, "w") as ResultFile:
 if args.json:
     with open(args.json, 'w') as JSON_FILE:
         json.dump(data, JSON_FILE)
+        JSON_FILE.write('\n')

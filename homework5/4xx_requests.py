@@ -1,5 +1,6 @@
 import json
 import argparse
+import re
 parser = argparse.ArgumentParser()
 parser.add_argument('LogFile', type=str, help='Нужен acces.log file первым аргументом')
 parser.add_argument('ResultFile', type=str, help='Нужен Resulting file вторым аргументом')
@@ -17,7 +18,9 @@ with open(args.LogFile, "r") as LogFile:
             if response.startswith("4"):
                 list_size.append(int(line.split()[9]))
                 list_ip.append(line.split()[0])
-                list_url.append(line.split()[6])
+                uri = line.split()[6]
+                url = re.split("\?|%|#|;|!|&|\+|=|!", uri)[0]
+                list_url.append(url)
                 list_response.append(response)
         else:
             break
@@ -45,3 +48,4 @@ if args.json:
     print(data)
     with open(args.json, 'w') as JSON_FILE:
         json.dump(data, JSON_FILE)
+        JSON_FILE.write('\n')

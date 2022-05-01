@@ -20,3 +20,4 @@ if args.json:
     data = {"N": url_counter}
     with open(args.json, 'w') as JSON_FILE:
         json.dump(data, JSON_FILE)
+        JSON_FILE.write('\n')

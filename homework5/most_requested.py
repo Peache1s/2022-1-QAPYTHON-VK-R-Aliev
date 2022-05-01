@@ -1,3 +1,4 @@
+import re
 import json
 import argparse
 parser = argparse.ArgumentParser()
@@ -11,7 +12,8 @@ with open(args.LogFile, "r") as LogFile:
     while True:
         line = LogFile.readline()
         if len(line) > 0:
-            url = line.split()[6]
+            uri = line.split()[6]
+            url = re.split("\?|%|#|;|!|&|\+|=|!", uri)[0]
             if url not in list_of_requests:
                 list_of_requests.append(url)
                 counter_list.append(1)
@@ -20,6 +22,7 @@ with open(args.LogFile, "r") as LogFile:
                 counter_list[index] += 1
         else:
             break
+
     data = {}
     for i in range(len(list_of_requests)):
         data[list_of_requests[i]] = counter_list[i]
@@ -27,6 +30,7 @@ with open(args.LogFile, "r") as LogFile:
     sorted_list = list(sorted_data)
     new_data = sorted_list[:9]
     data = dict(new_data)
+
 with open(args.ResultFile, "w") as ResultFile:
     ResultFile.write("URL                      N\n" )
     for x in data:
@@ -37,3 +41,4 @@ with open(args.ResultFile, "w") as ResultFile:
 if args.json:
     with open(args.json, 'w') as JSON_FILE:
         json.dump(data, JSON_FILE)
+        JSON_FILE.write('\n')

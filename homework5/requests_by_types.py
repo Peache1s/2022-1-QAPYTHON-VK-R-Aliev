@@ -36,3 +36,4 @@ if args.json:
         data[list_of_requests[i]] = counter_list[i]
     with open(args.json, 'w') as JSON_FILE:
         json.dump(data, JSON_FILE)
+        JSON_FILE.write('\n')
