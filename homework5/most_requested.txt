@@ -1,0 +1,11 @@
+N    URL:
+7729 /index.php
+6983 /
+4980 /templates/_system/css/general.css
+3199 /robots.txt
+26358 /apache-log/access.log
+2356 http://almhuette-raith.at/administrator/index.php
+2201 /favicon.ico
+1759 /wp-login.php
+1563 /administrator/
+1287 /templates/jp_hotel/css/template.css
