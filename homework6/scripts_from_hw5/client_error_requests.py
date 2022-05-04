@@ -1,6 +1,4 @@
-path = 'short_access.log'
-
-def client_error(path = path):
+def client_error(path):
     with open(path, "r") as LogFile:
         list_size = []
         list_response = []

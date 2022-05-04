@@ -1,6 +1,4 @@
-path = 'short_access.log'
-
-def server_error(path = path):
+def server_error(path):
     with open(path, "r") as LogFile:
         list_of_requests = []
         counter_list = []

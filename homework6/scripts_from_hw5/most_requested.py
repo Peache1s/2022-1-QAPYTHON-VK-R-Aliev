@@ -1,6 +1,4 @@
-path = 'short_access.log'
-
-def most_req(path = path):
+def most_req(path):
     with open(path, "r") as LogFile:
         list_of_requests = []
         counter_list = []

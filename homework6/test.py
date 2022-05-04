@@ -7,6 +7,7 @@ from scripts_from_hw5.requests_by_types import req_by_types
 from scripts_from_hw5.most_requested import most_req
 from scripts_from_hw5.server_error_requests import server_error
 from scripts_from_hw5.client_error_requests import client_error
+PATH = 'short_access.log'
 
 
 class MyTest:
@@ -20,31 +21,31 @@ class MyTest:
 class TestMySql(MyTest):
 
     def test_number_of_requests(self):
-        self.builder.add_data_to_number_of_requests(numb_of_req())
+        self.builder.add_data_to_number_of_requests(numb_of_req(PATH))
         self.mysql.session.commit()
         rows = self.mysql.session.query(NumberOfRequests).count()
         assert rows == 1
 
     def test_requests_by_types(self):
-        self.builder.add_data_to_requests_by_types(req_by_types())
+        self.builder.add_data_to_requests_by_types(req_by_types(PATH))
         self.mysql.session.commit()
         rows = self.mysql.session.query(RequestsByTypes).count()
-        assert rows == len(req_by_types()[0])
+        assert rows == len(req_by_types(PATH)[0])
 
     def test_most_requested(self):
-        self.builder.add_data_to_most_requested(most_req())
+        self.builder.add_data_to_most_requested(most_req(PATH))
         self.mysql.session.commit()
         rows = self.mysql.session.query(MostRequested).count()
-        assert rows == len(most_req())
+        assert rows == len(most_req(PATH))
 
     def test_top_users_with_server_error(self):
-        self.builder.add_data_to_server_error(server_error())
+        self.builder.add_data_to_server_error(server_error(PATH))
         self.mysql.session.commit()
         rows = self.mysql.session.query(ServerError).count()
-        assert rows == len(server_error())
+        assert rows == len(server_error(PATH))
 
     def test_top_requests_with_client_error(self):
-        self.builder.add_data_to_client_error(client_error())
+        self.builder.add_data_to_client_error(client_error(PATH))
         self.mysql.session.commit()
         rows = self.mysql.session.query(ServerError).count()
-        assert rows == len(client_error())
+        assert rows == len(client_error(PATH))

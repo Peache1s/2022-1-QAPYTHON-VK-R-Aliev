@@ -1,7 +1,4 @@
-path = 'short_access.log'
-
-
-def req_by_types(path = path):
+def req_by_types(path):
     list_of_requests = []
     counter_list = []
     with open(path, "r") as LogFile:
