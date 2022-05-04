@@ -7,7 +7,7 @@ from scripts_from_hw5.requests_by_types import req_by_types
 from scripts_from_hw5.most_requested import most_req
 from scripts_from_hw5.server_error_requests import server_error
 from scripts_from_hw5.client_error_requests import client_error
-PATH = 'short_access.log'
+PATH = 'homework6/short_access.log'
 
 
 class MyTest:
