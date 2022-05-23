@@ -1,0 +1,6 @@
+APP_HOST = '0.0.0.0'
+APP_PORT = '8099'
+MYSQL_HOST = 'mysql_project'
+MYSQL_PORT = '3306'
+MYSQL_DB = 'vkeducation'
+VK_URL = 'vk_api_project:8008'
